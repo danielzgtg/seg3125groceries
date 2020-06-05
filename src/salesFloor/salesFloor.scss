@@ -49,8 +49,8 @@
 
     & > div {
         height: 300px;
-        // TODO temp
         background: sandybrown linear-gradient(magenta, black) center / cover;
+        pointer-events: none; // Internet Explorer
     }
 
     & > label {

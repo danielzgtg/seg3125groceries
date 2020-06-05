@@ -18,8 +18,8 @@ export default function toss(src: HTMLDivElement): void {
         throw TypeError;
     }
     const destRect = dest.getBoundingClientRect();
-    style.left = `${srcRect.x - destRect.x}px`;
-    style.top = `${srcRect.y - destRect.y}px`;
+    style.left = `${srcRect.left - destRect.left}px`;
+    style.top = `${srcRect.top - destRect.top}px`;
     // Prepare cleanup
     ball.onanimationend = () => {
         ball.remove();
