@@ -1,0 +1,40 @@
+@import '../components/styles';
+
+// Require div to be empty for safety
+div:empty {
+    // Common as well as placeholder styles for the icon
+    &[aria-label] {
+        display: inline-block;
+        width: $font-size;
+        height: $font-size;
+        background: transparent linear-gradient(magenta, black) center / contain no-repeat;
+        cursor: pointer;
+
+        transition: background-color .3s;
+        &:active {
+            background-color: rgba(grey, .5);
+        }
+    }
+
+    // ### The actual icons ###
+
+    &[aria-label='Cart'] {
+        background-image: url('../res/android/ic_baseline_shopping_cart_24.svg');
+    }
+
+    &[aria-label='Filter'] {
+        background-image: url('../res/android/ic_baseline_filter_list_24.svg');
+    }
+
+    &[aria-label='Close'] {
+        background-image: url('../res/android/ic_baseline_arrow_back_24.svg');
+    }
+
+    &[aria-label='Remove'] {
+        background-image: url('../res/android/ic_baseline_delete_24.svg');
+    }
+
+    &[aria-label='Empty'] {
+        background-image: url('../res/android/ic_baseline_delete_sweep_24.svg');
+    }
+}

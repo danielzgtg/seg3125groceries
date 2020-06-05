@@ -1,14 +1,8 @@
-import './style.scss';
-import { fib } from './helpers';
+// JavaScript entrypoint for entire application
+// TS as a documentation and commenting layer on top of JS
 
-// noinspection SpellCheckingInspection
-const y: any = 'abcde';
+import './index.scss';
+// import toss from './basketball';
+import { init } from './controller';
 
-for (const x of y) {
-    // eslint-disable-next-line no-console
-    console.log(x);
-}
-
-const seq = fib();
-// eslint-disable-next-line no-console
-console.log(seq.next(), seq.next(), seq.next());
+init();

@@ -1,0 +1,75 @@
+@import 'extras';
+
+#sales-floor > main {
+    // Same floating card design as from Lab 1
+    @extend %title-and-button;
+
+    // Icon handled by icons.scss
+
+    padding: $padding;
+    background: whitesmoke;
+}
+
+// Floating card flattens when too compressed
+#sales-floor {
+    max-width: $responsive-width;
+    margin: 0 auto;
+
+    @media (min-width: $responsive-width) {
+        margin: 50px auto;
+        box-shadow: $box-shadow;
+        border-radius: 20px;
+    }
+
+    transition: filter .3s;
+
+    &[hidden] {
+        display: block;
+        filter: blur(4px);
+        pointer-events: none;
+    }
+}
+
+#sales-floor > main > section > article {
+    margin: $font-size;
+    display: inline-block;
+    width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    vertical-align: top;
+
+    transition: transform .3s;
+    &:hover {
+        transform: scale(1.1);
+    }
+    &:active {
+        transform: scale(.9);
+    }
+
+    & > div {
+        height: 300px;
+        // TODO temp
+        background: sandybrown linear-gradient(magenta, black) center / cover;
+    }
+
+    & > label {
+        display: block;
+        background: lightpink;
+        padding: $padding;
+        font-size: $font-size;
+        word-wrap: break-word;
+        overflow: hidden;
+        pointer-events: none;
+        user-select: none;
+
+        & > span + span {
+            color: forestgreen;
+            float: right;
+
+            &::before {
+                content: '$';
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('../res/noto/NotoSans-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url("../res/noto/NotoSans-Bold.ttf") format('truetype');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Noto Color Emoji';
+  src: url('../res/noto/NotoColorEmoji.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../res/opendyslexic/OpenDyslexic-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../res/opendyslexic/OpenDyslexic-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: bold;
+}
+
+* {
+  font-family: 'OpenDyslexic', 'Noto Sans', 'Noto Color Emoji', sans-serif;
+}

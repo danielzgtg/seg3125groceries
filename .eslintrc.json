@@ -121,7 +121,6 @@
     "prefer-object-spread": 2,
     "quote-props": [2, "as-needed"],
     "semi-spacing": 2,
-    "semi-style": 2,
     "space-before-blocks": 2,
     "space-before-function-paren": [2, "never"],
     "space-in-parens": 2,
@@ -153,6 +152,9 @@
     "yield-star-spacing": 2,
     "object-curly-spacing": [2, "always"],
     "@typescript-eslint/no-var-requires": 0,
+    "no-restricted-imports": [2, {
+      "patterns": ["_*", "!./_*"]
+    }],
     "semi": [2, "always"]
   }
 }

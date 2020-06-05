@@ -1,0 +1,10 @@
+// CSS entrypoint for entire application
+// SCSS as a documentation and commenting layer on top of CSS
+
+@import 'theme/global';
+@import 'cartBar/cartBar';
+@import 'settings/settings';
+@import 'salesFloor/salesFloor';
+@import 'checkout/checkout';
+@import 'basketball/basketball';
+@import 'processing/processing';

@@ -1,0 +1,44 @@
+@import './fonts';
+// css-normalize is not imported here because it contains 3rd party code so it needs to be its own entry point
+@import './icons';
+
+// Quality-of-life
+* {
+  box-sizing: border-box;
+  //user-select: none;
+}
+
+label {
+  touch-action: manipulation;
+}
+
+%no-margin {
+  margin: 0;
+}
+
+html, body {
+  @extend %no-margin;
+  width: 100%;
+  height: 100%;
+}
+
+section, h1 {
+  @extend %no-margin;
+}
+
+h2, h3 {
+  @extend %no-margin;
+  padding: 10px;
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+}
+
+td, th {
+  padding: 10px;
+}

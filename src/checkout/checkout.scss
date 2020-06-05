@@ -1,0 +1,93 @@
+@import '../components/styles';
+
+// The checkout
+#checkout {
+    // This one is always flush to the edges, and never like a dialog
+    @extend %modal;
+
+    // Icon handled by icons.scss
+
+    // Pop in from bottom
+    top: 0;
+    transition: top .3s;
+    &[hidden] {
+        display: initial;
+        top: 100vh;
+    }
+
+    & > main > table {
+        font-size: $font-size;
+        border-collapse: collapse;
+
+        td:not(:nth-child(2)) {
+            // Align all numbers right
+            text-align: right;
+        }
+
+        td:last-child {
+            text-align: center;
+            // TODO vertical align?
+        }
+
+        td:nth-last-child(2), td:not(:empty):nth-last-child(3) {
+            &:before {
+                content: '$';
+            }
+        }
+
+        & > tbody > tr {
+            // Alternate row colors for easy reading
+            &:nth-child(odd) {
+                background: papayawhip;
+            }
+
+            // Balance sheet gross
+            &:last-child > td:nth-last-child(2) {
+                border-bottom: 1px solid black;
+            }
+        }
+
+        & > tfoot > tr {
+            // Bold the calculated amounts
+            & > td:nth-child(2) {
+                font-weight: bold;
+            }
+
+            // Balance sheet net
+            &:last-child > td:nth-last-child(2) {
+                border-bottom: 3px double black;
+            }
+        }
+    }
+}
+
+#net-total {
+    font-weight: bold;
+}
+
+// Wrapper of #purchase
+table + div {
+    margin-top: $font-size;
+    text-align: center;
+}
+
+// "Next" button from Lab 1
+#purchase {
+    display: inline-block;
+    padding: 10px;
+    font-size: $font-size;
+    background: rgba(#000, .2);
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+    border: 1px solid black;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        transform: scale(1.2);
+        box-shadow: $box-shadow;
+    }
+
+    &:active {
+        border-color: transparent;
+    }
+}

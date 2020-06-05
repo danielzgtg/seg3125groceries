@@ -11,7 +11,7 @@ import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import TerserJSPlugin from 'terser-webpack-plugin';
 import WebpackManifestPlugin from 'webpack-manifest-plugin';
 
-const openPath = 'seg3125survey/';
+const openPath = 'seg3125groceries/';
 const publicPath = `/${openPath}`;
 const distPath = path.resolve(__dirname, `dist${publicPath}`);
 
@@ -41,7 +41,6 @@ function plugins(devMode: boolean): NonNullable<webpack.Configuration['plugins']
                 sortClassName: true,
             },
             xhtml: true,
-            enableHotReload: devMode,
         }),
         new CopyWebpackPlugin({
             patterns: [
@@ -54,7 +53,7 @@ function plugins(devMode: boolean): NonNullable<webpack.Configuration['plugins']
 const base: webpack.Configuration = {
     entry: {
         polyfills: './src/polyfills.ts',
-        'css-normalize': './src/css-normalize.ts',
+        'css-normalize': './src/theme/css-normalize.ts',
         main: './src/index.ts',
     },
     devServer: {

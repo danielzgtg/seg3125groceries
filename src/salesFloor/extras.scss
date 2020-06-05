@@ -1,0 +1,41 @@
+@import '../components/styles';
+
+header, footer {
+    text-align: center;
+    // Normal padding doesn't seem to be enough anymore
+    padding: $font-size;
+}
+
+// ### Windows 7 Glass feeling ###
+
+header {
+    background: rgba(lightgreen, .8);
+}
+
+footer {
+    background: rgba(cornflowerblue, .8);
+}
+
+aside {
+    color: dimgrey;
+}
+
+// ### This splash of the main but not the background gives a unique feeling to my pages ###
+
+@keyframes splash {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#sales-floor {
+    animation: splash 1s;
+    overflow: hidden;
+}
+
+body {
+    background: sandybrown url("../res/unsplash/market.jpg") center / cover fixed;
+}

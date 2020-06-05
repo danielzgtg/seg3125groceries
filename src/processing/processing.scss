@@ -1,0 +1,59 @@
+@import '../components/styles';
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// The processing
+#processing {
+    // This is currently flush and not like a dialog, but TODO may change
+    @extend %modal;
+
+    & > main > section {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        &[hidden], &:not([hidden]) + section {
+            display: none;
+        }
+
+        & > span {
+            font-size: $font-size * 2;
+        }
+
+        &:first-of-type > span {
+            animation: 1s spin linear infinite;
+        }
+    }
+
+    & > main {
+        transition: opacity 1s;
+    }
+
+    // Pop in from bottom
+    top: 0;
+    transition: top 1s;
+    &[hidden] {
+        display: initial;
+        top: 100vh;
+
+        & > main {
+            opacity: 0;
+        }
+    }
+}

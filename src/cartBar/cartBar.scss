@@ -1,0 +1,45 @@
+@import '../components/styles';
+
+// The bottom bar that shows the count
+#cart-bar {
+    position: fixed;
+    display: flex;
+    bottom: $padding;
+    width: 100%;
+    justify-content: center;
+    user-select: none;
+
+    & > aside {
+        display: block;
+        padding: $padding;
+        background: whitesmoke;
+        border-radius: $padding;
+        border: 1px solid;
+        cursor: pointer;
+
+        transition: transform .3s;
+        &:active {
+            transform: scale(.8);
+        }
+
+        // Icon handled by icons.scss
+
+        & > * {
+            pointer-events: none;
+        }
+
+        // Total count
+        & > span {
+            padding-left: $padding;
+            font-size: $font-size;
+            color: black;
+        }
+    }
+
+    // Slide in from bottom
+    transition: bottom .3s;
+    &[hidden] {
+        // TODO unhardcode
+        bottom: - 60px;
+    }
+}

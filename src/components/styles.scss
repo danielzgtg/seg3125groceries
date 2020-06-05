@@ -1,0 +1,42 @@
+// Styles imported all around
+$padding: 10px;
+$box-shadow: 0 14px 28px rgba(#000,.25), 0 10px 10px rgba(#000,.22);
+$responsive-width: 1500px;
+$font-size: 32px;
+
+%title-and-button {
+    // Get the close button positioned without hardcoding the layout
+
+    & > div[aria-label] {
+        // TODO This button still looks a bit off
+        float: left;
+    }
+
+    & > h2 {
+        padding-left: $padding;
+        text-align: center;
+        overflow: hidden;
+    }
+}
+
+%modal {
+    // Flush to the edges
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+
+    & > * {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+        background: whitesmoke;
+        padding: $padding;
+
+        @extend %title-and-button;
+    }
+}

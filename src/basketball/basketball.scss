@@ -1,0 +1,31 @@
+@import '../components/styles';
+
+// Throw groceries into the bag :)
+div.basketball {
+    position: absolute;
+    opacity: 0;
+    animation: basketball .8s;
+    background: sandybrown linear-gradient(magenta, black) center / cover;
+}
+
+@keyframes basketball {
+    // To avoid discontinuities, be invisible at 0%
+    20% {
+        opacity: 1;
+    }
+    // Nice long visible period in the middle
+    80% {
+        opacity: 1;
+    }
+    // Will end up at shopping cart icon
+    to {
+        width: $font-size;
+        height: $font-size;
+        top: 0;
+        left: 0;
+    }
+}
+
+#basket {
+    position: relative;
+}

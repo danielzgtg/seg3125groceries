@@ -1,2 +1,2 @@
-# SEG 3125 Lab 1
+# SEG 3125 Lab 2
 

@@ -1,0 +1,84 @@
+@import '../components/styles';
+
+$margin: 100px;
+
+// The user settings dialog
+#settings {
+    @extend %modal;
+
+    // Icon handled by icons.scss
+
+    // Pop in from top
+    transition: bottom .3s, box-shadow .3s, filter .3s, transform .3s;
+    &[hidden] {
+        display: initial;
+        bottom: 100vh;
+        filter: blur(4px);
+        transform: scale(.9);
+        box-shadow: initial;
+    }
+}
+
+@media (min-width: $responsive-width) {
+    // TODO remove this CSS transpiler bug workaround?
+    body > #settings {
+        // Insets to make it look more like a dialog
+        bottom: $margin;
+        right: initial;
+        left: $margin;
+        width: calc(100vw + #{-$margin - $margin});
+        height: calc(100vh + #{-$margin - $margin});
+        box-shadow: $box-shadow;
+    }
+}
+
+// The checkbox thing from Lab 1
+#settings > main > div:not(:empty) {
+    max-width: 400px;
+    padding: 20px;
+    margin: 0 auto;
+    user-select: none;
+
+    & > input[type="checkbox"] {
+        display: none;
+
+        & + label {
+            background: whitesmoke;
+            font-size: $font-size; // Now with larger fonts
+            display: block;
+            border: 1px solid grey;
+            padding: 10px;
+            position: relative;
+            transition: background-color .3s, transform .3s;
+
+            &:hover {
+                transform: scale(1.1);
+                z-index: 1;
+            }
+
+            &:first-of-type {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            &:last-of-type {
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            &::before {
+                content: "✖️";
+                margin-right: 10px;
+            }
+        }
+
+        &:checked + label {
+            // TODO This style doesn't really fit
+            background: palegreen;
+
+            &::before {
+                content: "✔️";
+            }
+        }
+    }
+}
