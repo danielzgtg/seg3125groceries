@@ -33,7 +33,7 @@
     "css-loader": "^3.5.3",
     "dom4": "^2.1.5",
     "ejs-compiled-loader": "^3.0.0",
-    "eslint": "^7.1.0",
+    "eslint": "^7.2.0",
     "eslint-loader": "^4.0.2",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
